@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Edit plan</title>
+    <link rel="stylesheet" type="text/css" href="editplan.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script type="text/javascript" src="editplan.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/additional-methods.js"></script>
+</head>
+<body>
+<form id="planform">
+    <table>
+        <tr>
+            <td style="width: 25%">
+                <div>
+                    <img src="logo.jpg" height="55" width="50">
+                    <h3 id="plan">Flight Plan</h3>
+                </div>
+                <div id="department">U.S. Department of Transportation Federal Aviation Administration</div>
+            </td>
+            <td style="background-color: lightgrey; width: 50%">
+                <span>(FAA USE ONLY)</span>
+                <input type="checkbox" class = "faa" name="pilot"><span>PILOT BRIEFING</span>
+                <input type="checkbox" class = "faa" name="VNR"><span>VNR</span><br>
+                <input type="checkbox" class = "faa" name="stopover"><span>STOPOVER</span>
+            </td>
+            <td style="background-color: lightgrey; width:15%">
+                <div class="field" style="margin-top:5px">TIME STARTED</div>
+                <input type="text" name="start_time">
+            </td>
+            <td style="background-color: lightgrey; width:10%">
+                <div class="field" style="margin-top: 5px">SPECIALIST INITIALS</div>
+                <input type="text" name="initials">
+            </td>
+        </tr>
+
+    </table>
+    <table>
+        <tr>
+            <td style="width: 8%">
+                <div class="field">1. TYPE (VFR/IFR/DVFR)</div>
+                <div>
+                    <input type="text" id="type" name="type"><span class="field type" ></span>
+                </div>
+            </td>
+            <td style="width: 16%">
+                <div>2. AIRCRAFT<br> IDENTIFICATION</div>
+                <div class="text" id="ident"></div>
+            </td>
+            <td style="width: 16%">
+                <div>3. AIRCRAFT TYPE/<br>SPECIAL EQUIPMENT</div>
+                <input type="text" id="special_equip" name="special_equip">
+            </td>
+            <td style="width: 10%">
+                <div>4. TRUE<br>AIRSPEED</div>
+                <input type="text" id="true_airspeed" name="true_airspeed"><div class="field">KTS</div>
+            </td>
+            <td style="width: 20%">
+                <div>5. DEPARTURE POINT</div>
+                <input type="text" id="departure" name="departure">
+            </td>
+            <td style="width: 20%">
+                <div>6. DEPARTURE TIME</div>
+                <div>
+                        <span>
+                            <div>PROPOSED(Z)</div>
+                            <div><input type="text" id="dept_time_proposed" name="dept_time_proposed"></div>
+                        </span>
+                        <span>
+                            <div>ACTUAL(Z)</div>
+                            <div><input type="text" id="dept_time_actual" name="dept_time_actual"></div>
+                        </span>
+                </div>
+            </td>
+            <td style="width: 10%">
+                <div>7. CRUISING ALTITUDE</div>
+                <input type="text" id="cruise_alt" name="cruise_alt">
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <div>8. ROUTE OF FLIGHT</div>
+                <input type="text" id="route" name="route">
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td style="width:20%">
+                <div>9. DESTINATION(Name of airport<br>and city)</div>
+                <input type="text" id="dst" name="dst"/>
+            </td>
+            <td style="width:20%">
+                <div>10. EST.TIME ENROUTE(HOURS,MINUTES)</div>
+                <div>
+                    <input type="text" id="ete" name="ete"/>
+                </div>
+            </td>
+            <td style="width:60%">
+                <div>11. REMARKS</div>
+                <input type="text" id="remarks" name="remarks">
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td style="width:15%">
+                <div>12. FUEL ON BOARD(HOURS,MINUTES)</MINUTES>)</div>
+                <div>
+                    <input type="text" id="fuel" name="fuel"/>
+                </div>
+            </td>
+            <td style="width:25%">
+                <div>13. ALTERNATE AIRPORT(S)</div>
+                <input type="text" id="alt_airports" name="alt_airports"/>
+            </td>
+            <td style="width:50%">
+                <div>14. PILOT'S NAME, ADDRESS & TELEPHONE NUMBER & AIRCRAFT HOME BASE</div>
+                <input type="text" id="name" name="name"/>
+                <div>17. DESTINATION CONTACT/TELEPHONE (OPTIONAL)</div>
+                <input type="text" id="dst_contact" name="dst_contact"/>
+            </td>
+            <td style="width:10%">
+                <div>15. NUMBER ABOARD</div>
+                <input type="text" id="num_aboard" name="num_aboard"/>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td style="width:30%">
+                <div>16. COLOR OF AIRCRAFT</div>
+                <input type="text" id="color" name="color"/>
+            </td>
+            <td>
+                CIVIL AIRCRAFT PILOTS. FAR Part 91 requries you file an IFR flight plan to operate under instrument flight rules
+                in controlled airspace. Failure to file could result in a civil penalty not to exceed $1,000 for each
+                violation (Section 901 of the Federal Aviation Act of 1958, as amended). Filing of a VFR flight plan is
+                recommended as a good operating practice. See also Part 99 for requirements concerning DVFR flight plans.
+            </td>
+        </tr>
+    </table>
+
+    <button type="submit" onclick="review()">Submit</button>
+</form>
+
+</body>
+</html>

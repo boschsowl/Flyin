@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Log into your account</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/additional-methods.js"></script>
+</head>
+<body>
+    <form id="logform">
+        <fieldset>
+            <legend>Welcome back!</legend>
+            <div>
+                <div class="text">
+                    <label class="field" for="username">User Name:</label>
+                    <input class="info" type="text" id="username" name="username" />
+                </div>
+
+                <div class="text">
+                    <label class="field" for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+            </div>
+            <button type="button" onclick="execAjax()">Login</button>
+        </fieldset>
+    </form>
+</body>
+</html>

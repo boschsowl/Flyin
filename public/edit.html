@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" type="text/css" href="edit.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script type="text/javascript" src="edit.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/additional-methods.js"></script>
+</head>
+<body>
+<form id = "form">
+    <fieldset>
+        <legend>Edit Profile</legend>
+        <div>
+            <div class="text">
+                <label class="field">User Name:</label>
+                <div class="info" id="username"></div>
+            </div>
+
+            <div class="text">
+                <label class="field" for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" />
+            </div>
+
+            <div class="text">
+                <label class="field" for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" />
+            </div>
+
+            <div class="text">
+                <label class="field" for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <div class="text">
+                <label class="field" for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob"/>
+            </div>
+
+            <div class="text">
+                <label class="field" for="address_street">Street:</label>
+                <input type="text" id="address_street" name="address_street"/>
+            </div>
+
+            <div class="text">
+                <label class="field" for="address_city">City:</label>
+                <input type="text" id="address_city" name="address_city"/>
+            </div>
+
+            <div class="text">
+                <label class="field" for="address_state">State:</label>
+                <input type="text" id="address_state" name="address_state"/>
+            </div>
+
+            <div class="text">
+                <label class="field" for="address_zip">Zip:</label>
+                <input type="text" id="address_zip" name="address_zip"/>
+            </div>
+
+            <div class="text">
+                <label class="field" for="primary_phone">Phone:</label>
+                <input type="text" id="primary_phone" name="primary_phone"/>
+            </div>
+
+            <div class="text">
+                <label class="field" for="primary_email">Email:</label>
+                <input type="email" id="primary_email" name="primary_email"/>
+            </div>
+
+        </div>
+
+        <button type="submit" onclick="validate()">Submit</button>
+
+    </fieldset>
+
+</form>
+</body>
+</html>
