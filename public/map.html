@@ -4,26 +4,16 @@
     <meta charset="UTF-8">
     <title>The Nashville Area</title>
 
-    <link rel="stylesheet" type="text/css" href="map.css">
+    <link rel="stylesheet" type="text/css" href="css/map.css">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
     <script src="http://jquerymy.com/js/md5.js"></script>
-    <script type="text/javascript" src="/map.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+
 </head>
 <body>
     <div id="map" style="width: 600px; height: 400px"></div>
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
-    <script>
-        var map = L.map('map').setView([36.1667, -86.7833], 13);
-
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-            maxZoom: 18,
-            id: 'elrohirrocks.cifaimn8w2dv8skkng4eymcth',
-            accessToken: 'pk.eyJ1IjoiZWxyb2hpcnJvY2tzIiwiYSI6ImNpZmFpbW9ndjJkc2FyeWx4OGYxN2JudzQifQ.pqTYE0zDJp4YfihzQCu9tQ'
-        }).addTo(this.map);
-
-    </script>
 
     <div id="navigation">
         <div><a href="/login.html" class="link" id="login">Log in</a></div>

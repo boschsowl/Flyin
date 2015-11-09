@@ -1,7 +1,7 @@
 {
-  "name": "assignment2",
+  "name": "assignment5",
   "version": "1.2.0",
-  "description": "Project 3: Server",
+  "description": "Project 5",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,9 +12,13 @@
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "express-session": "^1.11.3",
+    "fs": "0.0.2",
+    "geolib": "^2.0.18",
     "jade": "^1.11.0",
     "mongoose": "^4.1.11",
     "morgan": "^1.6.1",
+    "path": "^0.12.7",
+    "redis": "^2.2.5",
     "session": "^0.1.0",
     "shortid": "^2.2.4",
     "underscore": "^1.8.3"
