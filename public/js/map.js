@@ -47,8 +47,8 @@ $(document).ready(function(){
         var lat = e.latlng.lat,
             lng = e.latlng.lng;
         console.log("Longitude: " + lng + " Latitude: " + lat);
-        $.get('v1/airport/?lat=' + lat + 'long=' + lng + 'maxDist=10000',function(res,req){
-            console.log("Nearest airport and distance: " + req.body.nearestAirport);
+        $.get('v1/airport/?lat=' + lat + '&long=' + lng + '&maxDist=10000',function(data){
+            console.log("Nearest airport and distance: " + data);
         });
     });
 });

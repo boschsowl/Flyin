@@ -313,20 +313,20 @@ var findAirport = function(req,res){
                             type: "Point",
                             coordinates: [long, lat]
                         },
-                        $maxDistance: 10000
+                        $maxDistance: maxDist
                     }
                 }
     },function(err,airports){
+        var minDist = maxDist;
+        var nearestAirport;
         if(err){
             console.log(err);
             res.status(404).send();
         }
         else{
-            var minDist = 10000;
-            var nearestAirport;
             airports.forEach(function(airport){
                 var tmp = geolib.getDistance({latitude:lat,longitude:long},{latitude:airport.pos.latitude,longitude:airport.pos.longitude});
-                if(tmp<minDist){
+                if(tmp < minDist){
                     minDist = tmp;
                     nearestAirport = [airport.ident, minDist];
                 }
