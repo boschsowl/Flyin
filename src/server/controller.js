@@ -277,7 +277,7 @@ var fetchTile = function(req,res){
 };
 /*
 * 1. Incoming request(lat/long/max)
-* * airport_longs.js
+* * airport_loader.js
  *   connect to mongo
  *   require airports.json
  *   require schema of airport
@@ -306,32 +306,27 @@ var findAirport = function(req,res){
     var lat = pos.lat,
         long = pos.long,
         maxDist = pos.maxDist;
-    Airport.find({type:'AIRPORT',
-                pos: {
-                    $near: {
-                        $geometry: {
-                            type: "Point",
-                            coordinates: [long, lat]
-                        },
-                        $maxDistance: maxDist
-                    }
-                }
-    },function(err,airports){
+    Airport.find({type:'AIRPORT'}).nearSphere('pos', { center: [long, lat] , maxDistance: maxDist}).exec(function(err,airports) {
         var minDist = maxDist;
         var nearestAirport;
-        if(err){
-            console.log(err);
-            res.status(404).send();
+        if (err) {
+            res.status(500).send();
         }
-        else{
-            airports.forEach(function(airport){
-                var tmp = geolib.getDistance({latitude:lat,longitude:long},{latitude:airport.pos.latitude,longitude:airport.pos.longitude});
-                if(tmp < minDist){
+        else {
+            airports.forEach(function (airport) {
+                var airportlat = airport.pos[0];
+                var airportlong = airport.pos[1];
+                var tmp = geolib.getDistance({latitude: lat, longitude: long}, {
+                    latitude: airportlat,
+                    longitude: airportlong
+                });
+                if (tmp < minDist) {
                     minDist = tmp;
                     nearestAirport = [airport.ident, minDist];
                 }
             });
             res.status(200).send(nearestAirport);
+
         }
     });
 };
@@ -340,7 +335,7 @@ module.exports = function(app, redisClient) {
     redis = redisClient;
     app.post('/v1/session', login);
     app.post('/v1/user',signin);
-    app.get( '/v1/user:username',fetchUser);
+    app.get( '/v1/user/:username',fetchUser);
     app.post('/v1/edit', edit);
     app.post('/v1/plan', createPlan);
     app.get('v1/plan/:id',fetchPlan);

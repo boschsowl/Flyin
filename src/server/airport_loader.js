@@ -11,7 +11,7 @@
 */
 
 var mongoose = require('mongoose');
-var airports = require('./apt');
+var airports = require('./apt.json');
 var Airport = require('./models/airport');
 
 airports.forEach(function(airport){
